@@ -4,6 +4,7 @@
    <img src="https://avatars.githubusercontent.com/u/127348653?v=4?s=100" width="100px;" alt=""/>
    <br /><sub><b>Hugo Albert Plante</b></sub>
 </a>
+
 I am a second-year undergraduate student in Biomedical Engineering at Polytechnique Montreal. I am passionate about science because I live by the quote, “Impossible only means that you haven’t found the solution yet.” This mindset drives me to approach challenges with curiosity and persistence, always eager to discover innovative solutions that can make a difference. 
 
 Attending BHS as an undergraduate student was not a simple task, but it made the experience even more rewarding. My goal in participating was to kickstart part of my internship project, focused on developing a vendor-neutral g-Ratio protocol for the optic nerve.
