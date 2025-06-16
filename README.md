@@ -19,7 +19,9 @@ Multiple sclerosis (MS) is an autoimmune disease that affect 2.8 millions people
 
 #### g-Ratio: A key Metric in Myelin Studies
 the g-ratio is a crucial parameter for quantifying the relative thickness of the myelin sheath. It is defined as the ratio between the inner axonal radius (r) and the outer myelinated radius (R) of a nerve fiber:
+
 $$g=\frac{r}{R}$$
+
 This ratio provides into myelin integrity and neuronal health. 
 
 #### Volume Fractions and their significance
@@ -27,7 +29,9 @@ This ratio provides into myelin integrity and neuronal health.
 * **Fiber Volume Fraction (FVF)** represents the proportion of nerve fibers (axons plus myelin) in a given tissue volume. 
 * **Macromolecular Tissue Volume Fraction (MTVF)** represents the proportion of macromolecules (including myelin) in a given tissue volume.
 * The relation between MVF and FVF relates directly to the g-ratio (REF):
+
 $$\frac{MVF}{FVF}=1-g^2$$
+
 Using two MRI modalities, MVF and FVF can be calculated non-invasively.
 #### Imaging Techniques and Quantitatives Maps
 * Macromolecular Tissue Volume Fraction is used as an indirect measure of myelin content. In white matter like the optic nerve, myelin composition approximatively 50% of MTVF(REF). It has been shown that MTVF can be derived from the actual value of T1 in an MRI voxel:
