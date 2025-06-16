@@ -11,6 +11,9 @@ Attending BHS as an undergraduate student was not a simple task, but it made the
 ## Project summary
 
 ### Introduction
+This project focuses on quantifying myelin integrity in the optic nerve using multimodal MRI. Multiple Sclerosis (MS) causes degradation of the myelin sheath surrounding nerve fibers, impairing neural communication. Measuring key parameters such as the **g-ratio**, **Myelin Volume Fraction (MVF)**, and **Fiber Volume Fraction (FVF)** enables better understanding and monitoring of demyelination. 
+
+Using MRI-derived maps like T1 and FA, this project aims to compute these metrics non-invasively, providing valuable insights for reasearch and clinical applications in neurological disorders like MS.
 
 ### Background
 
@@ -35,9 +38,13 @@ $$\frac{MVF}{FVF}=1-g^2$$
 Using two MRI modalities, MVF and FVF can be calculated non-invasively.
 #### Imaging Techniques and Quantitatives Maps
 * Macromolecular Tissue Volume Fraction is used as an indirect measure of myelin content. In white matter like the optic nerve, myelin composition approximatively 50% of MTVF(REF). It has been shown that MTVF can be derived from the actual value of T1 in an MRI voxel:
+
 $$\frac{1}{1-MTVF}=\frac{0.44202}{T1}+0.94766$$
+
 * Fractionnal Anisotropy (FA) obtained from diffusion MRI, has shown have a quadratic relation FVF through simulations:
+
 $$FVF=0.883{FA}^2-0.082FA+0.074$$
+
 These imaging-derived metrics allow assessment of neuronal integrity and demyelination in diseases like MS. 
 
 
