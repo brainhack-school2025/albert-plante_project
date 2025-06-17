@@ -48,23 +48,109 @@ $$FVF=0.883{FA}^2-0.082FA+0.074$$
 
 These imaging-derived metrics allow assessment of neuronal integrity and demyelination in diseases like MS. 
 
-
-
-
 ### Main Objectives
+* Develop a pipeline for mapping the g-ratio of the optic nerve
+* Co-register MP2RAGE, DWI, and their derivatives to a common space (MNI 152)
+* Compute g-ratio, MVF, and FVF from segmentations
+* Calculate the mean g-ratio along each coronal slice of the optic nerve
 
 ## Personal Objectives
+*
 
 ### Tools
+* Jupyter notebooks for scripting
+* BIDS standards for reproducibility and standardization
+* Python for data vizualisation
+* dMRI module and Spinal Cord Toolbox for inspiration
+* **ANTs for image registration**
+* 3D Slicer and FSLeyes for image visualization and ROI definition 
+* Git and GitHub for Version Control
+* Python Packages: matplotlib, seaborn, scikit-learn, nilearn
 
 ### Data
+The data used in this study comes for NYU Abu Dabi (private dataset), where the MP2RAGE and Diffusion MRI acquisitions were performed on 9 healty subjects. Manuals segmentations of the optic nerve were also perfromed for both modalities to extract the relevant MRI metrics.
+
+For each subject, the dataset includes:
+* A raw MP2RAGE image for T1 map extraction
+* A denoised and defaced MP2RAGE UNI image
+* A DWI b0 image for registration purposes
+* A Fractional Anisotropy (FA) map obtained from a Siemens scanner
+* Manual segmentations fro both MRI modalities
+
+A supplementary critical part of the project was the analysis of a maximum probability label for the optic eye comming form (REF). The goal of this integration was to determine wether the maximum probability label could be used as a automated segmentation alternative to manual segmentations. 
 
 ### Project Deliverables
+* A non-invasive method for mapping the g-ratio along the optic nerve
+* An executable, reproducible pipeline that tales multimodal MRI as an input and outputs the mean g-ratio along the optic nerve
+* Jupyter Nobooks for data visualization and statistical metrics extraction
+#### Future Deliverable
+* Interactive tutorial-style NeuroLibre publication with interactive figures and data
+
+### Methodology
+1. Data Acquisition
+The dataset was acquired using a MP2RAGE and Diffusion MRI sequences on a 3T Siemens scanner located at NYU Abu Dabi. Nine healthy subjects were scanned, with manual segmentations of the optic nerve performed on both modalities for ground-truth extraction.
+
+2. Preprocessing
+Raw MP2RAGE UNI images were denoised and defaced to facilitate manual segmentation and registration. The denoising process reduces background noise that can interfere with the registration. Native FA maps provided by the scanner were used directly for FVF calculation. However, the FA map extraction and diffusion MRI preprocessing could be done with the diffusion MRI module's preprocessing Jupyter Notebook (REF) or Jasmin preprocessing pipeline (REF). 
+
+3. Image 
+Accurate co-registration between MP2RAGE and DWI is critical due to the small size (~4-5 voxels wide) and the natural curvature of the optic nerve. Multiples registration strategies were tested, including rigid, affine, and elastic transformations, to optimize alignment while preserving anatomical integrity. Elastic registration method tended to deform the optic nerve, resulting in segmentations inconsistencies, such as hole within manual masks. Ultimately, a combined rigid and affine registration approach was selected as the optimal balance between alignment and standardization to a template (MNI152).
+
+Additionally, another registration challenge occured because the DWI acquisitions covered only a slab including the optic nerve. This restriction made the aligment with the MP2RAGE full volume more complicated.
+
+5. Parameters Extraction
+Quatitative MRI parameters were extracted voxel-wise within the overlapping of both MRI modalities segmentation. This overlapping approach was necessary because DWI images are more noisier, producing bulkier segmentation compared to the more precise MP2RAGE segmentation. T1 relaxation maps, obtained from MP2RAGE through qMRLab (REF), were used to compute the MTVF via the established formula. The MVF was then calculated by combining the MTVF values with the assumed myelin composition of the tissue. Native extracted FA values were converted to FVF using the quadratic relation derived form simulation (REF).
+
+6. Modeling and Analysis
+The mean myelin volume fraction and mean fiber volume fraction were then used to calculate the mean g-ratio value along each coronal slice of the optic nerve. 
+
+7. Visualization and Output
+The final pipeline outputs include:
+* Coronal slice-wise plot of MVF, FVF, and g-ratio in a standardized (MNI152) space
+* Statistics metrics from each coronal slice including the dice coefficient between both modalities segmentations
 
 ## Results
+Since the dataset segmentations were not all completed by the submission date, the results presented here focus on only two subjects. 
 
-### Image registration using 'registration'
+### Image registration using 'registration.ipynb'
+The registration.ipynb (link) Jupyter Notebook contains the full registration workflow, starting from the raw MP2RAGE and DWI images and producing standardized results in the MNI 152 space.
 
+The first cell of the pipeline sets up the bash environment variables and creates the necessary directories. As the project follows the BIDS data structure standard, each subject's files should follow a directory tree similar to the example below (image REF). 
+
+Within this data structure, the only environment variables that require customization are 'PROJECT_ROOT' and 'SUBJECT'. Temporary derivative files are created in a designated directory, which can be safely deleted once the final results files are generated.
+
+For each registration step, the type of registration can be easily modified in the notebook by changing the value the '-t' parameter (REF) to:
+* 'r' for rigid 
+* 'a' for affine
+* 's' for nonlinear elastic (SyN) registration
+
+The pipeline proceeds as follows: 
+1. Rigid registration of DWI (automaticaly the b0 volume) to MP2RAGE
+2. Affine registration of MP2RAGE to MNI 152 template
+3. Application of transformations to:
+* DWI to MNI
+* DWI segmentation to MP2RAGE then to MNI
+* FA map to MP2RAGE then to MNI
+* MP2RAGE segmentation to MNI
+* T1 map to MNI
+4. Creation of standardized Regions of Interest (ROIs) for DWI and MP2RAGE in MNI 152 space
+5. Rigid registration of DWI ROI to MP2RAGE ROI (secondary alignment)
+6. Application of ROI transfromations to DWI, DWI segmentation, and FA map
+7. Generation of final results files
+8. Optional: Deletion of the temporary working directory
+
+Step 4 and 5 are necessary because the initial registration introduced an offset in the segmentations. Therefore, the ROI co-registration step corrects the misalignement as shown in the example below.
+
+### Data visualization using 'data_visualization.ipynb'
+
+Assuming that the results directory and files were generated sucessfully, the only variable that need to be modified in the notebook are 'PROJECT_ROOT' and 'SUBJECT'.
+
+The main steps in the data visualization workflow are as follow: 
+1. Load results files based on the specified 'PROJECT_ROOT' and 'SUBJECT'.
+2. Extract various slice-wise metrics, including slice index, number of voxels in each segmenation, number of overlapping voxels, Dice coefficient, as well as the mean and standard deviation of T1 and FA values.
+3. Compute slice-wise MVF, FVF, and g-ratio using detailed equations and underlying assumptions.
+4. Summarize relevant metrics that characterize the overlap between segmentations.
+5. Generate plots showing the slice-wise mean of T1, FA, FVF, MVF, and g-ratio, for visual interpretation
 
 ## Conclusions
 
