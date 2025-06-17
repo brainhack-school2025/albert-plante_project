@@ -187,8 +187,13 @@ Additionally
 
 ### Can we visualize the g-ratio value along the optic nerve?
 Yes. Using the developed pipeline, we successfully mapped and visualized the g-ratio values along the optic nerve in a reproducible and non-invasive manner. This provides meaningful insight into myelin integrity and fiber composition in differents subjects.
- 
-## Guide to Reproducibility
+
+### Encountered issues
+#### Registration issue
+
+#### MTVF vs MVF
+
+### Guide to Reproducibility
 This project follows the BIDS data structure for standardized input. To reproduce results:
 1. Set up the environment by sourcing 'env.sh'
 2. Organize data according to BIDS format under 'PROJECT_ROOT'.
@@ -197,7 +202,7 @@ This project follows the BIDS data structure for standardized input. To reproduc
 5. Run 'data_visualization.ipynb' to extract metrics and generate plots.
 6. Optional: Clean temporary directories to save space.
 
-### Troubleshooting
+## Troubleshooting
 * Registration issues: Because the DWI is normally a slab, multiples rigid registration between DWI and MP2RAGE can be needed because the registration algorithm can fail.
 * Missing dependencies: Ensure all Python packages and ANTs binairies are installed and accessible in your environment path.
 * File path errors: Verify your BIDS directory structure and that environment variables point to correct locations.
