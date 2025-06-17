@@ -143,7 +143,7 @@ Step 4 and 5 are necessary because the initial registration introduced an offset
 
 ![Segmentation Alignment](results/segmentation_alignment.png)
 
-Additionally, outlying values were identified near the edges of both manual segmentations. To ensure plausible values along the optic nerve, Regions of Interest (ROIs) were defined, as illustrated in the figure below. 
+Additionally, outlying values were identified near the edges of both manual segmentations. To ensure plausible values along the optic nerve, Regions of Interest (ROIs) were defined, as illustrated in the example figure below. 
 
 ![Segmentation Alignment](results/optic_nerve_roi.png)
 
@@ -185,14 +185,24 @@ Additionally
 
 ## Conclusions
 
-### Can we predict diagnosis from fMRI data?
-
-### Objectives, Tools, and Deliverables
-
+### Can we visualize the g-ratio value along the optic nerve?
+Yes. Using the developed pipeline, we successfully mapped and visualized the g-ratio values along the optic nerve in a reproducible and non-invasive manner. This provides meaningful insight into myelin integrity and fiber composition in differents subjects.
+ 
 ## Guide to Reproducibility
+This project follows the BIDS data structure for standardized input. To reproduce results:
+1. Set up the environment by sourcing 'env.sh'
+2. Organize data according to BIDS format under 'PROJECT_ROOT'.
+3. Modify subject variabes in the notebooks ('PROJECT_ROOT' and 'SUBJECT')
+4. Run 'registration.ipynb' to co-register images and create results files
+5. Run 'data_visualization.ipynb' to extract metrics and generate plots.
+6. Optional: Clean temporary directories to save space.
 
 ### Troubleshooting
-
+* Registration issues: Because the DWI is normally a slab, multiples rigid registration between DWI and MP2RAGE can be needed because the registration algorithm can fail.
+* Missing dependencies: Ensure all Python packages and ANTs binairies are installed and accessible in your environment path.
+* File path errors: Verify your BIDS directory structure and that environment variables point to correct locations.
+* Plotting errors: Create the metrics dataframe before visualization.
+  
 ## Acknowledgement
 
 ## References
