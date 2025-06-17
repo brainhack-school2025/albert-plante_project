@@ -98,13 +98,13 @@ Accurate co-registration between MP2RAGE and DWI is critical due to the small si
 
 Additionally, another registration challenge occured because the DWI acquisitions covered only a slab including the optic nerve. This restriction made the aligment with the MP2RAGE full volume more complicated.
 
-5. Parameters Extraction
+4. Parameters Extraction
 Quatitative MRI parameters were extracted voxel-wise within the overlapping of both MRI modalities segmentation. This overlapping approach was necessary because DWI images are more noisier, producing bulkier segmentation compared to the more precise MP2RAGE segmentation. T1 relaxation maps, obtained from MP2RAGE through qMRLab (REF), were used to compute the MTVF via the established formula. The MVF was then calculated by combining the MTVF values with the assumed myelin composition of the tissue. Native extracted FA values were converted to FVF using the quadratic relation derived form simulation (REF).
 
-6. Modeling and Analysis
+5. Modeling and Analysis
 The mean myelin volume fraction and mean fiber volume fraction were then used to calculate the mean g-ratio value along each coronal slice of the optic nerve. 
 
-7. Visualization and Output
+6. Visualization and Output
 The final pipeline outputs include:
 * Coronal slice-wise plot of MVF, FVF, and g-ratio in a standardized (MNI152) space
 * Statistics metrics from each coronal slice including the dice coefficient between both modalities segmentations
@@ -141,6 +141,7 @@ The pipeline proceeds as follows:
 
 Step 4 and 5 are necessary because the initial registration introduced an offset in the segmentations. Therefore, the ROI co-registration step corrects the misalignement as shown in the example below.
 
+
 ### Data visualization using 'data_visualization.ipynb'
 
 Assuming that the results directory and files were generated sucessfully, the only variable that need to be modified in the notebook are 'PROJECT_ROOT' and 'SUBJECT'.
@@ -151,6 +152,8 @@ The main steps in the data visualization workflow are as follow:
 3. Compute slice-wise MVF, FVF, and g-ratio using detailed equations and underlying assumptions.
 4. Summarize relevant metrics that characterize the overlap between segmentations.
 5. Generate plots showing the slice-wise mean of T1, FA, FVF, MVF, and g-ratio, for visual interpretation
+
+
 
 ## Conclusions
 
