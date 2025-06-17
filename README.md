@@ -139,10 +139,13 @@ The pipeline proceeds as follows:
 7. Generation of final results files
 8. Optional: Deletion of the temporary working directory
 
-Step 4 and 5 are necessary because the initial registration introduced an offset in the segmentations. Therefore, the ROI co-registration step corrects the misalignement as shown in the example below.
-<p align="center">
-<img src="results/segmentation_alignment.png">
-</p>
+Step 4 and 5 are necessary because the initial registration introduced an offset in the segmentations. Therefore, the ROI co-registration step corrects this misalignement, as illustrated in the example below: red represents the MP2RAGE segmentation, green represents the DWI segmentation after the initial alignment, and blue represents the DWI after the ROI alignment correction.
+
+![Segmentation Alignment](results/segmentation_alignment.png)
+
+Additionally, outlying values were identified near the edges of both manual segmentations. To ensure plausible values along the optic nerve, Regions of Interest (ROIs) were defined, as illustrated in the figure below. 
+
+![Segmentation Alignment](results/optic_nerve_roi.png)
 
 ### Data visualization using 'data_visualization.ipynb'
 
@@ -155,7 +158,30 @@ The main steps in the data visualization workflow are as follow:
 4. Summarize relevant metrics that characterize the overlap between segmentations.
 5. Generate plots showing the slice-wise mean of T1, FA, FVF, MVF, and g-ratio, for visual interpretation
 
+### Segmentation Overlap Metrics Summary
 
+| Metric                          | Subject 1           | Subject 2           |
+|--------------------------------|---------------------|---------------------|
+| Number of slices analyzed       | 32                  | 22                  |
+| Dice coefficient (mean ± std)   | 0.4961 ± 0.1703     | 0.3958 ± 0.1234     |
+| Average overlapping voxels/slice| 20.8                | 19.0                |
+| T1 values inside overlap (mean ± std, s) | 0.99 ± 0.13        | 0.99 ± 0.17        |
+| FA values inside overlap (mean ± std) | 0.5886 ± 0.1408     | 0.4370 ± 0.1013     |
+| Mean MTVF (mean ± std)          | 0.2736 ± 0.0278     | 0.2751 ± 0.0338     |
+| Mean MVF (mean ± std)           | 0.1368 ± 0.0139     | 0.1375 ± 0.0169     |
+| Mean FVF (mean ± std)           | 0.3486 ± 0.1594     | 0.2154 ± 0.0680     |
+| Mean g-ratio (mean ± std)       | 0.7329 ± 0.1019     | 0.5781 ± 0.1614     |
+
+### Results – MVF, FVF & g-Ratio
+Additionally
+
+#### Subject 0204
+
+![Subject 0204 metrics](results/subject0204_metrics.png)
+
+#### Subject 0457
+
+![Subject 0457 metrics](results/subject0457_metrics.png)
 
 ## Conclusions
 
