@@ -140,7 +140,9 @@ The pipeline proceeds as follows:
 8. Optional: Deletion of the temporary working directory
 
 Step 4 and 5 are necessary because the initial registration introduced an offset in the segmentations. Therefore, the ROI co-registration step corrects the misalignement as shown in the example below.
-
+<p align="center">
+<img src="results/segmentation_alignment.png">
+</p>
 
 ### Data visualization using 'data_visualization.ipynb'
 
