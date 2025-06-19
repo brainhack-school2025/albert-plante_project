@@ -1,3 +1,4 @@
+![Brain Anatomy Optic Nerve](docs/brain_anatomy_eye.jpg)
 # g-Ratio mapping of the optic nerve
 ## About me
 <a href="https://github.com/haplante">
@@ -5,21 +6,21 @@
    <br /><sub><b>Hugo Albert Plante</b></sub>
 </a>
 
-I am a second-year undergraduate student in Biomedical Engineering at Polytechnique Montreal. I am passionate about science because I live by the quote, “Impossible only means that you haven’t found the solution yet.” This mindset drives me to approach challenges with curiosity and persistence, always eager to discover innovative solutions that can make a difference. 
+I am a second-year undergraduate student in Biomedical Engineering at Polytechnique Montreal. I am passionate about science and guided by the belief that “impossible only means that you haven’t found the solution yet.” This mindset drives me to approach challenges with curiosity and persistence, always eager to discover innovative solutions that can make a difference. 
 
-Attending BHS as an undergraduate student was not a simple task, but it made the experience even more rewarding. My goal in participating was to kickstart part of my internship project, focused on developing a vendor-neutral g-Ratio protocol for the optic nerve.
+Attending BHS as an undergraduate student was not a simple task, but it made the experience even more rewarding. My goal in participating was to kickstart part of my internship project, focused on developing a vendor-neutral g-ratio protocol for the optic nerve.
 
 ## Project summary
 
 ### Introduction
-This project focuses on quantifying myelin integrity in the optic nerve using multimodal MRI. Multiple Sclerosis (MS) causes degradation of the myelin sheath surrounding nerve fibers, impairing neural communication. Measuring key parameters such as the **g-ratio**, **Myelin Volume Fraction (MVF)**, and **Fiber Volume Fraction (FVF)** enables better understanding and monitoring of demyelination. 
+This project focuses on quantifying myelin integrity in the optic nerve using multimodal MRI. Multiple Sclerosis (MS) causes degradation of the myelin sheath surrounding nerve fibers, impairing neural communication (Ausmed, 2025). Measuring key parameters such as the **g-ratio**, **Myelin Volume Fraction (MVF)**, and **Fiber Volume Fraction (FVF)** enables better understanding and monitoring of demyelination. 
 
 Using MRI-derived maps like T1 and FA, this project aims to compute these metrics non-invasively, providing valuable insights for reasearch and clinical applications in neurological disorders like MS.
 
 ### Background
 
 #### Multiple Sclerosis and Neuronal Structure
-Multiple sclerosis (MS) is an autoimmune disease that affect 2.8 millions peoples worldwide(REF). This disease occur when the body’s immune system mistakenly attack the myelin sheath, causing demyelination. A common early symptom of multiple sclerosis is optic neuritis, but as of 2024, it has also become a McDonald criteria for diagnosing MS(REF). 
+Multiple sclerosis (MS) is an autoimmune disease that affect 2.8 millions peoples worldwide, as of 2020 (MS Canada, 2025). This disease occur when the body’s immune system mistakenly attack the myelin sheath, causing demyelination. A common early symptom of multiple sclerosis is optic neuritis, but as of 2024, it has also become a McDonald criteria for diagnosing MS (MS Trust, 2024). 
 
 #### g-Ratio: A key Metric in Myelin Studies
 the g-ratio is a crucial parameter for quantifying the relative thickness of the myelin sheath. It is defined as the ratio between the inner axonal radius (r) and the outer myelinated radius (R) of a nerve fiber:
@@ -32,17 +33,17 @@ This ratio provides into myelin integrity and neuronal health.
 * **Myelin Volume Fraction (MVF)** represents the proportion of myelin in a given tissue volume.
 * **Fiber Volume Fraction (FVF)** represents the proportion of nerve fibers (axons plus myelin) in a given tissue volume. 
 * **Macromolecular Tissue Volume Fraction (MTVF)** represents the proportion of macromolecules (including myelin) in a given tissue volume.
-* The relation between MVF and FVF relates directly to the g-ratio (REF):
+* The relation between MVF and FVF relates directly to the g-ratio (Stikov et al., 2015):
 
 $$\frac{MVF}{FVF}=1-g^2$$
 
 Using two MRI modalities, MVF and FVF can be calculated non-invasively.
 #### Imaging Techniques and Quantitatives Maps
-* Macromolecular Tissue Volume Fraction is used as an indirect measure of myelin content. In white matter like the optic nerve, myelin composition approximatively 50% of MTVF(REF). It has been shown that MTVF can be derived from the actual value of T1 in an MRI voxel:
+* Macromolecular Tissue Volume Fraction is used as an indirect measure of myelin content. In white matter like the optic nerve, myelin composition approximatively 50% of MTVF (Mezer et al., 2013). It has been shown that MTVF can be derived from the actual value of T1 in an MRI voxel (Mezer et al., 2013):
 
 $$\frac{1}{1-MTVF}=\frac{0.44202}{T1}+0.94766$$
 
-* Fractionnal Anisotropy (FA) obtained from diffusion MRI, has shown have a quadratic relation FVF through simulations:
+* Fractionnal Anisotropy (FA) obtained from diffusion MRI, has shown have a quadratic relation FVF through simulations (Stikov et al., 2011):
 
 $$FVF=0.883{FA}^2-0.082FA+0.074$$
 
@@ -55,7 +56,10 @@ These imaging-derived metrics allow assessment of neuronal integrity and demyeli
 * Calculate the mean g-ratio along each coronal slice of the optic nerve
 
 ## Personal Objectives
-*
+* Improve my programming skills through real-world application
+* Familiarize myself with version control tools such as Git and GitHub
+* Gain hands-on experience in data processing and medical image analysis
+* Contribute to the development of scientific research in biomedical engineering
 
 ### Tools
 * Jupyter notebooks for scripting
@@ -65,7 +69,7 @@ These imaging-derived metrics allow assessment of neuronal integrity and demyeli
 * **ANTs for image registration**
 * 3D Slicer and FSLeyes for image visualization and ROI definition 
 * Git and GitHub for Version Control
-* Python Packages: matplotlib, seaborn, scikit-learn, nilearn
+* Python Packages: 'matplotlib', 'nibabel', 'pandas', 'numpy'
 
 ### Data
 The data used in this study comes for NYU Abu Dabi (private dataset), where the MP2RAGE and Diffusion MRI acquisitions were performed on 9 healty subjects. Manuals segmentations of the optic nerve were also perfromed for both modalities to extract the relevant MRI metrics.
@@ -77,12 +81,15 @@ For each subject, the dataset includes:
 * A Fractional Anisotropy (FA) map obtained from a Siemens scanner
 * Manual segmentations fro both MRI modalities
 
-A supplementary critical part of the project was the analysis of a maximum probability label for the optic eye comming form (REF). The goal of this integration was to determine wether the maximum probability label could be used as a automated segmentation alternative to manual segmentations. 
+A supplementary critical part of the project was the analysis of a maximum probability label for the optic eye comming form (Barranco Hernandez et al., 2024). The goal of this integration was to determine wether the maximum probability label could be used as a automated segmentation alternative to manual segmentations. 
+
+An exempale dataset will be upload to this GitHub repository once ethics approval from NYU has been obtained.
 
 ### Project Deliverables
 * A non-invasive method for mapping the g-ratio along the optic nerve
 * An executable, reproducible pipeline that tales multimodal MRI as an input and outputs the mean g-ratio along the optic nerve
-* Jupyter Nobooks for data visualization and statistical metrics extraction
+* Jupyter Notebooks for data visualization and statistical metrics extraction
+  
 #### Future Deliverable
 * Interactive tutorial-style NeuroLibre publication with interactive figures and data
 
@@ -91,15 +98,15 @@ A supplementary critical part of the project was the analysis of a maximum proba
 The dataset was acquired using a MP2RAGE and Diffusion MRI sequences on a 3T Siemens scanner located at NYU Abu Dabi. Nine healthy subjects were scanned, with manual segmentations of the optic nerve performed on both modalities for ground-truth extraction.
 
 2. Preprocessing
-Raw MP2RAGE UNI images were denoised and defaced to facilitate manual segmentation and registration. The denoising process reduces background noise that can interfere with the registration. Native FA maps provided by the scanner were used directly for FVF calculation. However, the FA map extraction and diffusion MRI preprocessing could be done with the diffusion MRI module's preprocessing Jupyter Notebook (REF) or Jasmin preprocessing pipeline (REF). 
+Raw MP2RAGE UNI images were denoised and defaced to facilitate manual segmentation and registration. The denoising process reduces background noise that can interfere with the registration. Native FA maps provided by the scanner were used directly for FVF calculation. However, the FA map extraction and diffusion MRI preprocessing could be done with the diffusion MRI module's preprocessing Jupyter Notebook (Brainhack School, n.d.) or Naghizadeh_project preprocessing pipeline (Naghizadeh, 2025). 
 
-3. Image 
+3. Image Registration
 Accurate co-registration between MP2RAGE and DWI is critical due to the small size (~4-5 voxels wide) and the natural curvature of the optic nerve. Multiples registration strategies were tested, including rigid, affine, and elastic transformations, to optimize alignment while preserving anatomical integrity. Elastic registration method tended to deform the optic nerve, resulting in segmentations inconsistencies, such as hole within manual masks. Ultimately, a combined rigid and affine registration approach was selected as the optimal balance between alignment and standardization to a template (MNI152).
 
 Additionally, another registration challenge occured because the DWI acquisitions covered only a slab including the optic nerve. This restriction made the aligment with the MP2RAGE full volume more complicated.
 
 4. Parameters Extraction
-Quatitative MRI parameters were extracted voxel-wise within the overlapping of both MRI modalities segmentation. This overlapping approach was necessary because DWI images are more noisier, producing bulkier segmentation compared to the more precise MP2RAGE segmentation. T1 relaxation maps, obtained from MP2RAGE through qMRLab (REF), were used to compute the MTVF via the established formula. The MVF was then calculated by combining the MTVF values with the assumed myelin composition of the tissue. Native extracted FA values were converted to FVF using the quadratic relation derived form simulation (REF).
+Quatitative MRI parameters were extracted voxel-wise within the overlapping of both MRI modalities segmentation. This overlapping approach was necessary because DWI images are more noisier, producing bulkier segmentation compared to the more precise MP2RAGE segmentation. T1 relaxation maps, obtained from MP2RAGE through qMRLab (qMRLab, n.d.), were used to compute the MTVF via the established formula. The MVF was then calculated by combining the MTVF values with the assumed myelin composition of the tissue. Native extracted FA values were converted to FVF using the quadratic relation derived form simulation (Stikov et al., 2011).
 
 5. Modeling and Analysis
 The mean myelin volume fraction and mean fiber volume fraction were then used to calculate the mean g-ratio value along each coronal slice of the optic nerve. 
@@ -112,12 +119,43 @@ The final pipeline outputs include:
 ## Results
 Since the dataset segmentations were not all completed by the submission date, the results presented here focus on only two subjects. 
 
-### Image registration using 'registration.ipynb'
-The registration.ipynb (link) Jupyter Notebook contains the full registration workflow, starting from the raw MP2RAGE and DWI images and producing standardized results in the MNI 152 space.
+### Image registration using [registration.ipynb](script/registration.ipynb)
+The 'registration.ipynb' Jupyter Notebook contains the full registration workflow, starting from the raw MP2RAGE and DWI images and producing standardized results in the MNI 152 space.
 
-The first cell of the pipeline sets up the bash environment variables and creates the necessary directories. As the project follows the BIDS data structure standard, each subject's files should follow a directory tree similar to the example below (image REF). 
+The first cell of the pipeline sets up the bash environment variables and creates the necessary directories. As the project follows the BIDS data structure standard, each subject's files should follow a directory tree similar to the example below:
+<details>
+  <summary>Project Directory Structure (click to expand)</summary>
+```plaintext
+project_root/
+└── data/
+    ├── sub-XXX/    
+    │   ├── anat/
+    │   │   └── sub-XXX_T1w.nii.gz
+    │   └── dwi/
+    │       └── sub-XXX_dwi.nii.gz
+    │
+    └── derivatives/
+        ├── t1_map/
+        │   └── sub-XXX/
+        │       └── sub-XXX_t1_map.nii.gz
+        ├── fa_map/
+        │   └── sub-XXX/
+        │       └── sub-XXX_scanner_FA.nii.gz
+        ├── optic_nerve_segmentations/
+        │   └── sub-XXX/
+        │       ├── anat/
+        │       │   └── sub-XXX_label-ON_seg.nii.gz
+        │       └── dwi/
+        │           └── sub-XXX_label-ON_seg.nii.gz
+        │  
+        └── templates/
+            ├── MNI152_T1_1mm.nii.gz
+            ├── Atlas_MNI.nii.gz
+            └── Optic_Nerve_Label_MNI.gz
+```
+</details>
 
-Within this data structure, the only environment variables that require customization are 'PROJECT_ROOT' and 'SUBJECT'. Temporary derivative files are created in a designated directory, which can be safely deleted once the final results files are generated.
+Within this data structure, the only environment variables that require customization are 'PROJECT_ROOT' and 'SUBJECT'. In this project, manual segmentations were performed directly on pre-rigidly registered DWI images, but the raw DWI image can also be used. Temporary derivative files are created in a designated directory, which can be safely deleted once the final results files are generated.
 
 For each registration step, the type of registration can be easily modified in the notebook by changing the value the '-t' parameter (REF) to:
 * 'r' for rigid 
@@ -147,7 +185,7 @@ Additionally, outlying values were identified near the edges of both manual segm
 
 ![Segmentation Alignment](results/optic_nerve_roi.png)
 
-### Data visualization using 'data_visualization.ipynb'
+### Data visualization using [data_visualization.ipynb](script/data_visualization.ipynb)
 
 Assuming that the results directory and files were generated sucessfully, the only variable that need to be modified in the notebook are 'PROJECT_ROOT' and 'SUBJECT'.
 
