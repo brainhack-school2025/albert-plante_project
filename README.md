@@ -253,17 +253,30 @@ This project follows the BIDS data structure for standardized input. To reproduc
 I would like to thank Nikola Stikov and Agah Karakuzu for their mentorship and expertise, as well as Bas Roker and Ameen Qadi from the Rokers Vision Laboratory in NYU Abu Dhabi. Special thanks also to Eva Alonso Ortiz and Sebastian Rios, the professor and teaching assistant of the course, for their guidance and support.  
 
 ## References
-  Ausmed. (2025, 01). How Does Multiple Sclerosis Affect the Body? | Ausmed. https://www.ausmed.com/learn/articles/multiple-sclerosis-nursing-care
-  Barranco Hernandez, J., Luyken, A., Kebiri, H., Stachs, P., Macias Gordaliza, P., Esteban, O., Aleman Gomez, Y., Sznitman, R., Stachs, O., Langner, S., Franceschiello, B., & Bach Cuadra, M. (2024). Eye-Opening Advances: Automated 3D Segmentation, Key Biomarkers Extraction, and the First Large-Scale MRI Eye Atlas. https://doi.org/10.1101/2024.08.15.608051
-  Brainhack School. (n.d.). Training modules. Retrieved June 19, 2025, from https://school-brainhack.github.io/modules/
-  Duval, T., Stikov, N., & Cohen-Adad, J. (2017). Modeling white matter microstructure. Functional Neurology, 31(4), 217–228. https://doi.org/10.11138/FNeur/2016.31.4.217
-  Mezer, A., Yeatman, J. D., Stikov, N., Kay, K. N., Cho, N.-J., Dougherty, R. F., Perry, M. L., Parvizi, J., Hua, L. H., Butts-Pauly, K., & Wandell, B. A. (2013). Quantifying the local tissue volume and composition in individual brains with magnetic resonance imaging. Nature Medicine, 19(12), 1667–1672. https://doi.org/10.1038/nm.3390
-  MS Canada. (2025, February 7). Prevalence and incidence of MS in Canada and around the world | MS Canada. https://mscanada.ca/ms-research/latest-research/prevalence-and-incidence-of-ms-in-canada-and-around-the-world
-  MS Trust. (2024, 11). McDonald criteria | MS Trust. https://mstrust.org.uk/a-z/mcdonald-criteria
-  Naghizadeh, Y. (2025). Naghizadeh_project. https://github.com/brainhack-school2025/Naghizadeh_project
-  NeuroLibre. (n.d.). Retrieved June 19, 2025, from https://neurolibre.org
-  qMRLab. (n.d.). Home | qMRLab. Retrieved June 19, 2025, from https://qmrlab.org/
-  Rokers Vision Laboratory. (n.d.). Retrieved June 19, 2025, from https://sites.nyuad.nyu.edu/rokersvisionlaboratory/
-  State University of New York College of Optometry. (2019, December 11). Scientists Discover the Origin of Brain Mapping Diversity for Eye Dominance [Video]. SciTechDaily. https://scitechdaily.com/scientists-discover-the-origin-of-brain-mapping-diversity-for-eye-dominance-video/
-  Stikov, N., Campbell, J. S. W., Stroh, T., Lavelée, M., Frey, S., Novek, J., Nuara, S., Ho, M.-K., Bedell, B. J., Dougherty, R. F., Leppert, I. R., Boudreau, M., Narayanan, S., Duval, T., Cohen-Adad, J., Picard, P.-A., Gasecka, A., Côté, D., & Pike, G. B. (2015). In vivo histology of the myelin g-ratio with magnetic resonance imaging. NeuroImage, 118, 397–405. https://doi.org/10.1016/j.neuroimage.2015.05.023
-  Stikov, N., Perry, L. M., Mezer, A., Rykhlevskaia, E., Wandell, B. A., Pauly, J. M., & Dougherty, R. F. (2011). Bound pool fractions complement diffusion measures to describe white matter micro and macrostructure. NeuroImage, 54(2), 1112–1121. https://doi.org/10.1016/j.neuroimage.2010.08.068
+Ausmed. (2025, 01). How Does Multiple Sclerosis Affect the Body? | Ausmed. https://www.ausmed.com/learn/articles/multiple-sclerosis-nursing-care
+  
+Barranco Hernandez, J., Luyken, A., Kebiri, H., Stachs, P., Macias Gordaliza, P., Esteban, O., Aleman Gomez, Y., Sznitman, R., Stachs, O., Langner, S., Franceschiello, B., & Bach Cuadra, M. (2024). Eye-Opening Advances: Automated 3D Segmentation, Key Biomarkers Extraction, and the First Large-Scale MRI Eye Atlas. https://doi.org/10.1101/2024.08.15.608051
+  
+Brainhack School. (n.d.). Training modules. Retrieved June 19, 2025, from https://school-brainhack.github.io/modules/
+  
+Duval, T., Stikov, N., & Cohen-Adad, J. (2017). Modeling white matter microstructure. Functional Neurology, 31(4), 217–228. https://doi.org/10.11138/FNeur/2016.31.4.217
+
+Mezer, A., Yeatman, J. D., Stikov, N., Kay, K. N., Cho, N.-J., Dougherty, R. F., Perry, M. L., Parvizi, J., Hua, L. H., Butts-Pauly, K., & Wandell, B. A. (2013). Quantifying the local tissue volume and composition in individual brains with magnetic resonance imaging. Nature Medicine, 19(12), 1667–1672. https://doi.org/10.1038/nm.3390
+
+MS Canada. (2025, February 7). Prevalence and incidence of MS in Canada and around the world | MS Canada. https://mscanada.ca/ms-research/latest-research/prevalence-and-incidence-of-ms-in-canada-and-around-the-world
+
+MS Trust. (2024, 11). McDonald criteria | MS Trust. https://mstrust.org.uk/a-z/mcdonald-criteria
+
+Naghizadeh, Y. (2025). Naghizadeh_project. https://github.com/brainhack-school2025/Naghizadeh_project
+
+NeuroLibre. (n.d.). Retrieved June 19, 2025, from https://neurolibre.org
+
+qMRLab. (n.d.). Home | qMRLab. Retrieved June 19, 2025, from https://qmrlab.org/
+
+Rokers Vision Laboratory. (n.d.). Retrieved June 19, 2025, from https://sites.nyuad.nyu.edu/rokersvisionlaboratory/
+
+State University of New York College of Optometry. (2019, December 11). Scientists Discover the Origin of Brain Mapping Diversity for Eye Dominance [Video]. SciTechDaily. https://scitechdaily.com/scientists-discover-the-origin-of-brain-mapping-diversity-for-eye-dominance-video/
+
+Stikov, N., Campbell, J. S. W., Stroh, T., Lavelée, M., Frey, S., Novek, J., Nuara, S., Ho, M.-K., Bedell, B. J., Dougherty, R. F., Leppert, I. R., Boudreau, M., Narayanan, S., Duval, T., Cohen-Adad, J., Picard, P.-A., Gasecka, A., Côté, D., & Pike, G. B. (2015). In vivo histology of the myelin g-ratio with magnetic resonance imaging. NeuroImage, 118, 397–405. https://doi.org/10.1016/j.neuroimage.2015.05.023
+
+Stikov, N., Perry, L. M., Mezer, A., Rykhlevskaia, E., Wandell, B. A., Pauly, J. M., & Dougherty, R. F. (2011). Bound pool fractions complement diffusion measures to describe white matter micro and macrostructure. NeuroImage, 54(2), 1112–1121. https://doi.org/10.1016/j.neuroimage.2010.08.068
