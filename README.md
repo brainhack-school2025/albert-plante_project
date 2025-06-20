@@ -1,3 +1,33 @@
+---
+type: "project" # DON'T TOUCH THIS ! :)
+date: "2025-06-20" # Date you first upload your project.
+# Title of your project (we like creative title)
+title: "g-Ratio mapping of the optic nerve"
+
+# List the names of the collaborators within the [ ]. If alone, simple put your name within []
+names: [Hugo Albert Plante]
+
+# Your project GitHub repository URL
+github_repo: [https://github.com/PSY6983-2021/project_template](https://github.com/brainhack-school2025/albert-plante_project)
+
+# If you are working on a project that has website, indicate the full url including "https://" below or leave it empty.
+website: ""
+
+# List +- 4 keywords that best describe your project within []. Note that the project summary also involves a number of key words. Those are listed on top of the [github repository](https://github.com/PSY6983-2021/project_template), click `manage topics`.
+# Please only lowercase letters
+tags: [g-ratio, qmri, dmri, multiple sclerosis]
+
+# Summarize your project in < ~75 words. This description will appear at the top of your page and on the list page with other projects..
+
+summary: "This project aims to accurately compute the optic nerve g-ratio, a key neuroimaging marker reflecting myelin integrity in nerve fibers. Using advances quantitative MRI techniques, it analyses the human optic nerve’s microstructure non-invasively. By integrating MP2RAGE and diffusion MRI, it seeks to improve assessment of myelin and nerve health, contributing to better understanding, early detection, and diagnosis of neurological diseases like multiple sclerosis (MS)."
+
+# If you want to add a cover image (listpage and image in the right), add it to your directory and indicate the name
+# below with the extension.
+image: "docs/brain_anatomy_eye.jpg"
+---
+<!-- This is an html comment and this won't appear in the rendered page. You are now editing the "content" area, the core of your description. Everything that you can do in markdown is allowed below. We added a couple of comments to guide your through documenting your progress. -->
+
+
 ![Brain Anatomy Optic Nerve](docs/brain_anatomy_eye.jpg)
 # g-Ratio mapping of the optic nerve
 ## About me
