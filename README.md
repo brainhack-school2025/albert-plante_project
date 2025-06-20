@@ -91,14 +91,6 @@ These imaging-derived metrics allow assessment of neuronal integrity and demyeli
 * Gain hands-on experience in data processing and medical image analysis
 * Contribute to the development of scientific research in biomedical engineering
 
-### Project Deliverables
-* A non-invasive method for mapping the g-ratio along the optic nerve
-* An executable, reproducible pipeline that tales multimodal MRI as an input and outputs the mean g-ratio along the optic nerve
-* Jupyter Notebooks for data visualization and statistical metrics extraction
-  
-#### Future Deliverable
-* Interactive tutorial-style NeuroLibre publication with interactive figures and data
-
 ## Methods
 ### Tools
 * Jupyter notebooks for scripting
@@ -112,7 +104,7 @@ These imaging-derived metrics allow assessment of neuronal integrity and demyeli
 * Python Packages: 'matplotlib', 'nibabel', 'pandas', 'numpy'
 
 ### Data
-The data used in this study comes for NYU Abu Dhabi (private dataset), where the MP2RAGE and Diffusion MRI acquisitions were performed on 9 healty subjects. Manuals segmentations of the optic nerve were also perfromed for both modalities to extract the relevant MRI metrics.
+The data used in this study comes for NYU Abu Dhabi (private dataset), where the MP2RAGE and Diffusion MRI acquisitions were performed on 10 healty subjects. Manuals segmentations of the optic nerve were also perfromed for both modalities to extract the relevant MRI metrics.
 
 For each subject, the dataset includes:
 * A raw MP2RAGE image for T1 map extraction
@@ -125,12 +117,20 @@ A supplementary critical part of the project was the analysis of a maximum proba
 
 An exampale dataset will be upload to this GitHub repository once ethics approval from NYU has been obtained.
 
+### Project Deliverables
+* A non-invasive method for mapping the g-ratio along the optic nerve
+* An executable, reproducible pipeline that takes multimodal MRI as an input and outputs the mean g-ratio along the optic nerve
+* Jupyter Notebooks for data visualization and statistical metrics extraction
+  
+#### Future Deliverable
+* Interactive tutorial-style NeuroLibre publication with interactive figures and data
+
 ### Methodology
 1. Data Acquisition
-The dataset was acquired using a MP2RAGE and Diffusion MRI sequences on a 3T Siemens scanner located at NYU Abu Dhabi. Nine healthy subjects were scanned, with manual segmentations of the optic nerve performed on both modalities for ground-truth extraction.
+The dataset was acquired using a MP2RAGE and Diffusion MRI sequences on a 3T Siemens scanner located at NYU Abu Dhabi. Ten healthy subjects were scanned, with manual segmentations of the optic nerve performed on both modalities for ground-truth extraction.
 
 2. Preprocessing
-Raw MP2RAGE UNI images were denoised and defaced to facilitate manual segmentation and registration. The denoising process reduces background noise that can interfere with the registration. Native FA maps provided by the scanner were used directly for FVF calculation. However, the FA map extraction and diffusion MRI preprocessing could be done with the diffusion MRI module's preprocessing Jupyter Notebook (Brainhack School, n.d.) or Naghizadeh_project preprocessing pipeline (Naghizadeh, 2025). 
+Raw MP2RAGE UNI images were denoised and defaced to facilitate manual segmentation and registration. The denoising process reduces background noise that can interfere with the registration. Native FA maps provided by the scanner were used directly for FVF calculation. However, the FA map extraction and diffusion MRI preprocessing could be done with the diffusion MRI module's preprocessing Jupyter Notebook (Brainhack School, n.d.) or Naghizadeh_project's preprocessing pipeline (Naghizadeh, 2025). 
 
 3. Image Registration
 Accurate co-registration between MP2RAGE and DWI is critical due to the small size (~4-5 voxels wide) and the natural curvature of the optic nerve. Multiple registration strategies were tested, including rigid, affine, and elastic transformations, to optimize alignment while preserving anatomical integrity. Elastic registration methods tended to deform the optic nerve, resulting in segmentations inconsistencies, such as holes within manual masks. Ultimately, a combined rigid and affine registration approach was selected as the optimal balance between alignment and standardization to a template (MNI152). Additionally, another registration challenge occured because the DWI acquisitions covered only a slab including the optic nerve. This restriction made the aligment with the MP2RAGE full-volume more complicated.
@@ -186,10 +186,9 @@ project_root/
 ```
 </details>
 
-
 Within this data structure, the only environment variables that require customization are 'PROJECT_ROOT' and 'SUBJECT'. In this project, manual segmentations were performed directly on pre-rigidly registered DWI images, but the raw DWI image can also be used. Temporary derivative files are created in a designated directory, which can be safely deleted once the final results files are generated.
 
-For each registration step, the type of registration can be easily modified in the notebook by changing the value the '-t' parameter (REF) to:
+For each registration step, the type of registration can be easily modified in the notebook by changing the value the '-t' parameter to:
 * 'r' for rigid 
 * 'a' for affine
 * 's' for nonlinear elastic (SyN) registration
@@ -244,13 +243,13 @@ The main steps in the data visualization workflow are as follow:
 
 ### Results – MVF, FVF & g-Ratio
 Plausibles results were obtained for regions of interest (ROIs) in the optic nerve, with calculated g-ratio values ranging between 0.6 and 0.8 for each subject. The calculated mean for each coronal slice includes both the right and the left optic nerves. 
-#### Subject 0204
+#### Subject 1
 
-![Subject 0204 metrics](results/subject0204_metrics.png)
+![Subject 1 metrics](results/subject1_metrics.png)
 
-#### Subject 0457
+#### Subject 2
 
-![Subject 0457 metrics](results/subject0457_metrics.png)
+![Subject 1 metrics](results/subject2_metrics.png)
 
 ## Conclusions
 
