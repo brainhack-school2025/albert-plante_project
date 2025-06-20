@@ -45,7 +45,7 @@ Attending BHS as an undergraduate student was not a simple task, but it made the
 ### Introduction
 This project focuses on quantifying myelin integrity in the optic nerve using multimodal MRI. Multiple Sclerosis (MS) causes degradation of the myelin sheath surrounding nerve fibers, impairing neural communication (Ausmed, 2025). Measuring key parameters such as the **g-ratio**, **Myelin Volume Fraction (MVF)**, and **Fiber Volume Fraction (FVF)** enables better understanding and monitoring of demyelination. 
 
-Using MRI-derived maps like T1 and FA, this project aims to compute these metrics non-invasively, providing valuable insights for reasearch and clinical applications in neurological disorders like MS.
+Using MRI-derived maps like T1 and FA, this project aims to compute these metrics non-invasively, providing valuable insights for research and clinical applications in neurological disorders like MS.
 
 ### Background
 
@@ -57,7 +57,7 @@ the g-ratio is a crucial parameter for quantifying the relative thickness of the
 
 $$g=\frac{r}{R}$$
 
-This ratio provides into myelin integrity and neuronal health. 
+This ratio provides insight into myelin integrity and neuronal health. 
 
 #### Volume Fractions and their significance
 * **Myelin Volume Fraction (MVF)** represents the proportion of myelin in a given tissue volume.
@@ -119,11 +119,11 @@ For each subject, the dataset includes:
 * A denoised and defaced MP2RAGE UNI image
 * A DWI b0 image for registration purposes
 * A Fractional Anisotropy (FA) map obtained from a Siemens scanner
-* Manual segmentations fro both MRI modalities
+* Manual segmentations from both MRI modalities
 
 A supplementary critical part of the project was the analysis of a maximum probability label for the optic eye comming form (Barranco Hernandez et al., 2024). The goal of this integration was to determine wether the maximum probability label could be used as a automated segmentation alternative to manual segmentations. 
 
-An exempale dataset will be upload to this GitHub repository once ethics approval from NYU has been obtained.
+An exampale dataset will be upload to this GitHub repository once ethics approval from NYU has been obtained.
 
 ### Methodology
 1. Data Acquisition
@@ -133,10 +133,10 @@ The dataset was acquired using a MP2RAGE and Diffusion MRI sequences on a 3T Sie
 Raw MP2RAGE UNI images were denoised and defaced to facilitate manual segmentation and registration. The denoising process reduces background noise that can interfere with the registration. Native FA maps provided by the scanner were used directly for FVF calculation. However, the FA map extraction and diffusion MRI preprocessing could be done with the diffusion MRI module's preprocessing Jupyter Notebook (Brainhack School, n.d.) or Naghizadeh_project preprocessing pipeline (Naghizadeh, 2025). 
 
 3. Image Registration
-Accurate co-registration between MP2RAGE and DWI is critical due to the small size (~4-5 voxels wide) and the natural curvature of the optic nerve. Multiples registration strategies were tested, including rigid, affine, and elastic transformations, to optimize alignment while preserving anatomical integrity. Elastic registration method tended to deform the optic nerve, resulting in segmentations inconsistencies, such as hole within manual masks. Ultimately, a combined rigid and affine registration approach was selected as the optimal balance between alignment and standardization to a template (MNI152). Additionally, another registration challenge occured because the DWI acquisitions covered only a slab including the optic nerve. This restriction made the aligment with the MP2RAGE full volume more complicated.
+Accurate co-registration between MP2RAGE and DWI is critical due to the small size (~4-5 voxels wide) and the natural curvature of the optic nerve. Multiple registration strategies were tested, including rigid, affine, and elastic transformations, to optimize alignment while preserving anatomical integrity. Elastic registration methods tended to deform the optic nerve, resulting in segmentations inconsistencies, such as holes within manual masks. Ultimately, a combined rigid and affine registration approach was selected as the optimal balance between alignment and standardization to a template (MNI152). Additionally, another registration challenge occured because the DWI acquisitions covered only a slab including the optic nerve. This restriction made the aligment with the MP2RAGE full-volume more complicated.
 
 4. Parameters Extraction
-Quatitative MRI parameters were extracted voxel-wise within the overlapping of both MRI modalities segmentation. This overlapping approach was necessary because DWI images are more noisier, producing bulkier segmentation compared to the more precise MP2RAGE segmentation. T1 relaxation maps, obtained from MP2RAGE through qMRLab (qMRLab, n.d.), were used to compute the MTVF via the established formula. The MVF was then calculated by combining the MTVF values with the assumed myelin composition of the tissue. Native extracted FA values were converted to FVF using the quadratic relation derived form simulation (Stikov et al., 2011).
+Quantitative MRI parameters were extracted voxel-wise within the overlapping of both MRI modalities segmentation. This overlapping approach was necessary because DWI images are noisier, producing bulkier segmentation compared to the more precise MP2RAGE segmentation. T1 relaxation maps, obtained from MP2RAGE through qMRLab (qMRLab, n.d.), were used to compute the MTVF via the established formula. The MVF was then calculated by combining the MTVF values with the assumed myelin composition of the tissue. Native extracted FA values were converted to FVF using the quadratic relation derived form simulation (Stikov et al., 2011).
 
 5. Modeling and Analysis
 The mean myelin volume fraction and mean fiber volume fraction were then used to calculate the mean g-ratio value along each coronal slice of the optic nerve. 
@@ -195,7 +195,7 @@ For each registration step, the type of registration can be easily modified in t
 * 's' for nonlinear elastic (SyN) registration
 
 The pipeline proceeds as follows: 
-1. Rigid registration of DWI (automaticaly the b0 volume) to MP2RAGE
+1. Rigid registration of DWI (automatically the b0 volume) to MP2RAGE
 2. Affine registration of MP2RAGE to MNI 152 template
 3. Application of transformations to:
 * DWI to MNI
@@ -205,7 +205,7 @@ The pipeline proceeds as follows:
 * T1 map to MNI
 4. Creation of standardized Regions of Interest (ROIs) for DWI and MP2RAGE in MNI 152 space
 5. Rigid registration of DWI ROI to MP2RAGE ROI (secondary alignment)
-6. Application of ROI transfromations to DWI, DWI segmentation, and FA map
+6. Application of ROI transformations to DWI, DWI segmentation, and FA map
 7. Generation of final results files
 8. Optional: Deletion of the temporary working directory
 
@@ -243,7 +243,7 @@ The main steps in the data visualization workflow are as follow:
 | Mean g-ratio (mean ± std)       | 0.7329 ± 0.1019     | 0.5781 ± 0.1614     |
 
 ### Results – MVF, FVF & g-Ratio
-Plausibles results were obtained for regions of interest (ROIs) in the optic nerve, with calculated g-ratio values ranging between 0.6 and 0.8 for each subject. The calculated mean for each coronal slice include both right and left optic nerve. 
+Plausibles results were obtained for regions of interest (ROIs) in the optic nerve, with calculated g-ratio values ranging between 0.6 and 0.8 for each subject. The calculated mean for each coronal slice includes both the right and the left optic nerves. 
 #### Subject 0204
 
 ![Subject 0204 metrics](results/subject0204_metrics.png)
@@ -265,19 +265,43 @@ The [max probability optic nerve label](data/derivatives/templates) was initialy
 As previously stated, two registrations issues were encountered. The first was related to the small size (~4-5 voxels wide) and the natural curvature of the optic nerve. Non-affine or elastic registrations tended to deform the optic nerve and create hole in the transformed manual segmentation masks. The second issue involved the alignment of the two manual segmentations: a single rigid registration resulted in an approximate one-slice offset. However, applying a second rigid registration using ROIs was able to correct this initial misalignment.
 
 #### MTVF vs MVF
-Initialy, it was assumed that myelin constitutes nearly 100% of the macromolecular content in white mater like the optic nerve. This assumption led to an overestimation of the Myelin Volume Fraction (MVF) by Macromolecular Tissue Volume Fraction (MTVF), resulting in non-plausible results such as more myelin than fiber. An literature search revealed that myelin accounts for only 50% of the macromolecular content in white matter. With this correction, plausible values of g-ratio were acheived. 
+Initialy, it was assumed that myelin constitutes nearly 100% of the macromolecular content in white mater like the optic nerve. This assumption led to an overestimation of the Myelin Volume Fraction (MVF) by Macromolecular Tissue Volume Fraction (MTVF), resulting in non-plausible results such as more myelin than fiber. An litterature search revealed that myelin accounts for only 50% of the macromolecular content in white matter. With this correction, plausible values of g-ratio were acheived. 
 
 ### Guide to Reproducibility
 This project follows the BIDS data structure for standardized input. To reproduce results:
-1. Organize data according to BIDS format under 'PROJECT_ROOT'.
-2. Modify subject variabes in the notebooks ('PROJECT_ROOT' and 'SUBJECT')
-3. Run 'registration.ipynb' to co-register images and create results files
-4. Run 'data_visualization.ipynb' to extract metrics and generate plots.
-5. Optional: Clean temporary directories to save space.
+1. Clone the repository
+```
+git clone https://github.com/brainhack-school2025/albert-plante_project.git
+cd albert-plante_project
+```
+2. Set up a Python virtual environment
+```
+For Linux/Mac:
+python3 -m venv .venv
+source .venv/bin/activate
+
+For Windows:
+python -m venv .venv
+.venv\Scripts\activate
+```
+3. Install required Python packages
+```
+pip install -r requirements.txt
+```
+4. Install Jupyter Notebook
+```
+pip install notebook
+```
+5. Install [ANTs](https://github.com/ANTsX/ANTs) and [FSL](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/install/index)
+6. Organize data according to BIDS format under 'PROJECT_ROOT'.
+7. Modify subject variabes in the notebooks ('PROJECT_ROOT' and 'SUBJECT')
+8. Run 'registration.ipynb' to co-register images and create results files.
+9. Run 'data_visualization.ipynb' to extract metrics and generate plots.
+10. Optional: Clean temporary directories to save space.
 
 ## Troubleshooting
 * Registration issues: Because the DWI is normally a slab, multiples rigid registration between DWI and MP2RAGE can be needed because the registration algorithm can fail.
-* Missing dependencies: Ensure all Python packages and ANTs binairies are installed and accessible in your environment path.
+* Missing dependencies: Ensure all Python packages and ANTs binaries are installed and accessible in your environment path.
 * File path errors: Verify your BIDS directory structure and that environment variables point to correct locations.
 * Plotting errors: Create the metrics dataframe before visualization.
   
