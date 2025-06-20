@@ -8,12 +8,12 @@ title: "g-Ratio mapping of the optic nerve"
 names: [Hugo Albert Plante]
 
 # Your project GitHub repository URL
-github_repo: [https://github.com/PSY6983-2021/project_template](https://github.com/brainhack-school2025/albert-plante_project)
+github_repo: https://github.com/brainhack-school2025/albert-plante_project
 
 # If you are working on a project that has website, indicate the full url including "https://" below or leave it empty.
-website: ""
+website:
 
-# List +- 4 keywords that best describe your project within []. Note that the project summary also involves a number of key words. Those are listed on top of the [github repository](https://github.com/PSY6983-2021/project_template), click `manage topics`.
+# List +- 4 keywords that best describe your project within []. Note that the project summary also involves a number of key words. Those are listed on top of the [github repository](https://github.com/AlexPeng517/BHS2023_Project_SAM_MRI), click `manage topics`.
 # Please only lowercase letters
 tags: [g-ratio, qmri, dmri, multiple sclerosis]
 
@@ -26,7 +26,7 @@ summary: "This project aims to accurately compute the optic nerve g-ratio, a key
 image: "docs/brain_anatomy_eye.jpg"
 ---
 <!-- This is an html comment and this won't appear in the rendered page. You are now editing the "content" area, the core of your description. Everything that you can do in markdown is allowed below. We added a couple of comments to guide your through documenting your progress. -->
-
+---
 
 ![Brain Anatomy Optic Nerve](docs/brain_anatomy_eye.jpg)
 # g-Ratio mapping of the optic nerve
