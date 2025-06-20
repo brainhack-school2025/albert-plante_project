@@ -227,7 +227,7 @@ The main steps in the data visualization workflow are as follow:
 4. Summarize relevant metrics that characterize the overlap between segmentations.
 5. Generate plots showing the slice-wise mean of T1, FA, FVF, MVF, and g-ratio, for visual interpretation
 
-### Segmentation Overlap Metrics Summary
+### Segmentation Overlap Metrics Summary (whole optic nerve)
 
 | Metric                          | Subject 1           | Subject 2           |
 |--------------------------------|---------------------|---------------------|
