@@ -251,17 +251,27 @@ Plausibles results were obtained for regions of interest (ROIs) in the optic ner
 
 ![Subject 1 metrics](results/subject2_metrics.png)
 
-## Conclusions
-
-### Can we visualize the g-ratio value along the optic nerve?
-Yes. Using the developed pipeline, we successfully mapped and visualized the g-ratio values along the optic nerve in a reproducible and non-invasive manner. This provides meaningful insight into myelin integrity and fiber composition in differents subjects.
-
 ### Tools that I learned during this project
 * Python for data processing, scripting, and analysing
 * Jupyter Notebooks to organize and run interactive data workflows
 * ANTS (Advanced Normalization Tools) for medical image registration and transformation
 * Git and GitHub for version control and project collaboration
 * BIDS for standardization of the data structure
+
+### Results
+#### Deliverable 1:
+A non-invasive method for visualize the mean g-ratio along the coronal slices of the optic nerve.
+
+#### Deliverable 2:
+An executable and fully reproducible processing pipeline that:
+* Takes multimodal MRI inputs
+* Computer and outputs the mean g-ratio along the optic nerve
+* Includes Jupyter Notebooks for data visualization and extraction of relevant statistical metrics
+
+## Conclusions
+
+### Can we visualize the g-ratio value along the optic nerve?
+Yes. Using the developed pipeline, we successfully mapped and visualized the g-ratio values along the optic nerve in a reproducible and non-invasive manner. This provides meaningful insight into myelin integrity and fiber composition in differents subjects.
 
 ### Encountered issues
 #### Atlas max probability optic nerve label
