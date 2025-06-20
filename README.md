@@ -228,7 +228,7 @@ The main steps in the data visualization workflow are as follow:
 5. Generate plots showing the slice-wise mean of T1, FA, FVF, MVF, and g-ratio, for visual interpretation
 
 ### Segmentation Overlap Metrics Summary (whole optic nerve)
-
+Segmentation overlap metrics showed moderate agreement between manual segmentations with Dice coefficients of 0.4961 ± 0.1703 and 0.3958 ± 0.1234 for subjects 1 and 2, respectively.
 | Metric                          | Subject 1           | Subject 2           |
 |--------------------------------|---------------------|---------------------|
 | Number of slices analyzed       | 32                  | 22                  |
