@@ -154,7 +154,8 @@ The 'registration.ipynb' Jupyter Notebook contains the full registration workflo
 
 The first cell of the pipeline sets up the bash environment variables and creates the necessary directories. As the project follows the BIDS data structure standard, each subject's files should follow a directory tree similar to the example below:
 <details>
-  <summary>Project Directory Structure (click to expand)</summary>
+<summary>Project Directory Structure (click to expand)</summary>
+   
 ```plaintext
 project_root/
 └── data/
@@ -184,6 +185,7 @@ project_root/
             └── Optic_Nerve_Label_MNI.gz
 ```
 </details>
+
 
 Within this data structure, the only environment variables that require customization are 'PROJECT_ROOT' and 'SUBJECT'. In this project, manual segmentations were performed directly on pre-rigidly registered DWI images, but the raw DWI image can also be used. Temporary derivative files are created in a designated directory, which can be safely deleted once the final results files are generated.
 
