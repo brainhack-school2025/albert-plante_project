@@ -256,6 +256,13 @@ Plausibles results were obtained for regions of interest (ROIs) in the optic ner
 ### Can we visualize the g-ratio value along the optic nerve?
 Yes. Using the developed pipeline, we successfully mapped and visualized the g-ratio values along the optic nerve in a reproducible and non-invasive manner. This provides meaningful insight into myelin integrity and fiber composition in differents subjects.
 
+### Tools that I learned during this project
+* Python for data processing, scripting, and analysing
+* Jupyter Notebooks to organize and run interactive data workflows
+* ANTS (Advanced Normalization Tools) for medical image registration and transformation
+* Git and GitHub for version control and project collaboration
+* BIDS for standardization of the data structure
+
 ### Encountered issues
 #### Atlas max probability optic nerve label
 The [max probability optic nerve label](data/derivatives/templates) was initialy used to assess whether manual segmentation was truly necessary, or if this atlas-based label could serve as an automated segmentation alternative. Howerver, the Dice coefficient between the overlapping regions of both manual segmentations and the maximum probability atlas label ranged only from 15% to 20%. Given this low similarity, the maximum probability label was excluded from further analysis.
