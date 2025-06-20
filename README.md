@@ -40,7 +40,7 @@ I am a second-year undergraduate student in Biomedical Engineering at Polytechni
 
 Attending BHS as an undergraduate student was not a simple task, but it made the experience even more rewarding. My goal in participating was to kickstart part of my internship project, focused on developing a vendor-neutral g-ratio protocol for the optic nerve.
 
-## Project summary
+## Project definition
 
 ### Introduction
 This project focuses on quantifying myelin integrity in the optic nerve using multimodal MRI. Multiple Sclerosis (MS) causes degradation of the myelin sheath surrounding nerve fibers, impairing neural communication (Ausmed, 2025). Measuring key parameters such as the **g-ratio**, **Myelin Volume Fraction (MVF)**, and **Fiber Volume Fraction (FVF)** enables better understanding and monitoring of demyelination. 
@@ -85,17 +85,27 @@ These imaging-derived metrics allow assessment of neuronal integrity and demyeli
 * Compute g-ratio, MVF, and FVF from segmentations
 * Calculate the mean g-ratio along each coronal slice of the optic nerve
 
-## Personal Objectives
+### Personal Objectives
 * Improve my programming skills through real-world application
 * Familiarize myself with version control tools such as Git and GitHub
 * Gain hands-on experience in data processing and medical image analysis
 * Contribute to the development of scientific research in biomedical engineering
 
+### Project Deliverables
+* A non-invasive method for mapping the g-ratio along the optic nerve
+* An executable, reproducible pipeline that tales multimodal MRI as an input and outputs the mean g-ratio along the optic nerve
+* Jupyter Notebooks for data visualization and statistical metrics extraction
+  
+#### Future Deliverable
+* Interactive tutorial-style NeuroLibre publication with interactive figures and data
+
+## Methods
 ### Tools
 * Jupyter notebooks for scripting
 * BIDS standards for reproducibility and standardization
 * Python for data vizualisation
-* dMRI module and Spinal Cord Toolbox for inspiration
+* dMRI module and Spinal Cord Toolbox for inspiration and understanding
+* BASH for automation
 * **ANTs for image registration**
 * 3D Slicer and FSLeyes for image visualization and ROI definition 
 * Git and GitHub for Version Control
@@ -114,14 +124,6 @@ For each subject, the dataset includes:
 A supplementary critical part of the project was the analysis of a maximum probability label for the optic eye comming form (Barranco Hernandez et al., 2024). The goal of this integration was to determine wether the maximum probability label could be used as a automated segmentation alternative to manual segmentations. 
 
 An exempale dataset will be upload to this GitHub repository once ethics approval from NYU has been obtained.
-
-### Project Deliverables
-* A non-invasive method for mapping the g-ratio along the optic nerve
-* An executable, reproducible pipeline that tales multimodal MRI as an input and outputs the mean g-ratio along the optic nerve
-* Jupyter Notebooks for data visualization and statistical metrics extraction
-  
-#### Future Deliverable
-* Interactive tutorial-style NeuroLibre publication with interactive figures and data
 
 ### Methodology
 1. Data Acquisition
